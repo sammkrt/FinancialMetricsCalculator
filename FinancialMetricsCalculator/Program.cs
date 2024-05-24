@@ -36,7 +36,7 @@ namespace FinancialMetricsCalculator
             double debtEquityRatio = debt / totalEquity;
             double roe = netIncome / totalEquity;
 
-            // Sonuçları yazdır
+            // Print results
             Console.WriteLine($"\nP/E Ratio: {peRatio}");
             Console.WriteLine($"PEG Ratio: {pegRatio}");
             Console.WriteLine($"Dividend Yield: {dividendYield:P2}");
@@ -44,13 +44,13 @@ namespace FinancialMetricsCalculator
             Console.WriteLine($"Free Cash Flow (EUR): {freeCashFlow}");
             Console.WriteLine($"ROE: {roe:P2}");
 
-            // Sonuçları yorumla ve PDF olarak kaydet
-            string yorum = GenerateCommentary(peRatio, pegRatio, dividendYield, debtEquityRatio, roe);
+            // Generate commentary and save as PDF
+            string commentary = GenerateCommentary(peRatio, pegRatio, dividendYield, debtEquityRatio, roe);
 
-            // PDF dosyasını belirli bir dizine kaydet ve dosya adında şirket ismini kullan
+            // Save the PDF file to a specific directory and use the company name in the file name
             string fileName = $"FinancialMetricsReport_{symbol}.pdf";
             string filePath = Path.Combine(Directory.GetCurrentDirectory(), fileName);
-            CreatePdf(filePath, peRatio, pegRatio, dividendYield, debtEquityRatio, freeCashFlow, roe, yorum);
+            CreatePdf(filePath, peRatio, pegRatio, dividendYield, debtEquityRatio, freeCashFlow, roe, commentary);
             Console.WriteLine($"PDF report has been saved to {filePath}");
         }
 
