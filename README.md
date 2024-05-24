@@ -51,5 +51,7 @@ This is a .NET Core console application that calculates financial metrics for a 
 3. Enter the stock symbol when prompted (e.g., AAPL, MSFT, GOOG).
 4. The application will fetch the financial data, perform the calculations, and save the PDF report in the current directory.
 
-## Example
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
